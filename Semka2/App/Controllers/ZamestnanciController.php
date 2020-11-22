@@ -74,26 +74,22 @@ class ZamestnanciController extends AControllerBase
     public function validate($meno, $popis, $vek)
     {
         $vekErrors = [];
-
         $menoErrors = [];
+        $popisErrors = [];
+
         if(strlen($meno) < 3)
         {
-            $menoErrors[] = "Nazov musi byt dlhsi ako 3 znaky";
-        }
-
-        if(!ctype_alpha($meno))
-        {
-            $menoErrors[] = "Meno nesmie obsahovat cislo ani znak";
+            $menoErrors[] = "Meno musi byt dlhsie ako 3 znaky";
         }
 
         if(!is_numeric($vek))
         {
-            $vekErrors[] = "Neplatna hodnota.";
+            $vekErrors[] = "Neplatna hodnota, zadaj číslo.";
         }
 
         if($vek < 18 && is_numeric(($vek)))
         {
-            $vekErrors[] = "Deti nebereme";
+            $vekErrors[] = "Inštruktor musí mať viac ako 18 rokov.";
         }
 
         if($vek > 100 && is_numeric(($vek)))
@@ -101,7 +97,6 @@ class ZamestnanciController extends AControllerBase
             $vekErrors[] = "Zadaj realny vek, nie na kolko sa citis.";
         }
 
-        $popisErrors = [];
         if(strlen($popis) < 10)
         {
             $popisErrors[] = "Prilis kratky text.";
