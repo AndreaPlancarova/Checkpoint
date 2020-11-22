@@ -1,0 +1,69 @@
+#kontakt {
+    background-image: url("https://i.pinimg.com/564x/e5/2d/25/e52d25d8e7b8f2bfb6bc60a026c3792f.jpg");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    background-size: cover;
+    transform: translate(0%, -100%);
+    top: 100%;
+    position: fixed;
+}
+.titleOfModel {
+    font-size: 3.5rem;
+    font-weight: 3000;
+    color: darkslateblue;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.partOfModel {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+
+}
+.paragrafText {
+    background-color: aliceblue;
+    background-size: cover;
+    background-origin: border-box;
+    border: black;
+    padding: 5%;
+}
+
+.obrazok {
+    background-size: cover;
+    width: 50%;
+    left: 50%;
+    transform: translateX(50%);
+}
+.obrazok2 {
+    background-size: cover;
+    width: 100%;
+
+}
+h3{
+    height: auto;
+    color: darkslateblue;
+}
+
+ul li{
+    color: midnightblue;
+}
+body{
+    background-image: url("https://i.pinimg.com/564x/21/86/06/21860637492fd5b48ed1f5eac45a51ff.jpg");
+    background-repeat: repeat;
+    background-origin: border-box;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+
+}
