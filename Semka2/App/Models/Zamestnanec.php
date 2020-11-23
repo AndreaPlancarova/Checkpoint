@@ -39,7 +39,7 @@ class Zamestnanec extends Model
 
     static public function setTableName()
     {
-        return "zamestnanci";
+        return "zamestnanec";
     }
 
     public function getId()

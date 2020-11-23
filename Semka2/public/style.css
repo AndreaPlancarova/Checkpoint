@@ -16,7 +16,11 @@
     line-height: 1.2;
     text-align: center;
 }
-
+.obrProfilovka{
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
 .partOfModel {
     position: relative;
     display: -ms-flexbox;

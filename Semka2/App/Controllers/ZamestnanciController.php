@@ -74,12 +74,32 @@ class ZamestnanciController extends AControllerBase
     public function validate($meno, $popis, $vek)
     {
         $vekErrors = [];
-        $menoErrors = [];
         $popisErrors = [];
-
+        $menoErrors = [];
         if(strlen($meno) < 3)
         {
-            $menoErrors[] = "Meno musi byt dlhsie ako 3 znaky";
+            $menoErrors[] = "Nazov musi byt dlhsi ako 3 znaky";
+        }
+
+        $medzera = 0;
+        $chyba = false;
+
+        for($i=0; $i<strlen($meno) - 1;$i++) {
+            if ($meno[$i] == " ") {
+                $medzera++;
+
+            } elseif (!ctype_alpha($meno[$i])) {
+                $chyba = true;
+            }
+
+        }
+        if($medzera != 1)
+        {
+            $menoErrors[] = "Napis cele meno.";
+        }
+        if($chyba == true)
+        {
+            $menoErrors[] = "Meno nesmie obsahovať čísla ani znaky.";
         }
 
         if(!is_numeric($vek))
@@ -107,7 +127,7 @@ class ZamestnanciController extends AControllerBase
 
     public function redirectToIndex()
     {
-        header("Location:http://localhost/VAIIsem.git/mvc/index.php?c=Zamestnanci");
+        header("Location:http://localhost/Checkpoint/Semka2/index.php?c=Zamestnanci");
         die();
     }
 }
